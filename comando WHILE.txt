@@ -1,0 +1,32 @@
+comando WHILE
+-----------
+
+em C: 
+
+       while( <exprLogica> ) 
+             <comando>;
+
+       
+estampa do WHILE em MIPS: S
+-----------------------
+
+obs: nn eh o numero do label
+
+whilenn: ## colocar um label com o numero do while
+
+      # codigo de <exprLogica> 
+      # ... usando instrucoes set
+      # ... deixando verdadeiro ou falso em $t0
+      beq $t0, $0, fimWhilenn      # compara com falso
+                          #vai para fimIfnn se for falso
+                          
+      # codigo do <comando>;
+      ... # incluir aqui
+
+      j whilenn
+fimWhilenn: #gera o label do fimIf com o número adequado
+            # pois não tem parte else
+
+
+------------------------------------------------------------
+
